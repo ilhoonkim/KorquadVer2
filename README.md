@@ -39,3 +39,5 @@ html 원문을 전처리를 통해 필요없는 tag를 제거하거나 다른 �
 
 그래서 저는 62G RAM , 1080TI 하나로도 학습할 수 있도록 하기 위하여 korquad 2.1 의 38개의 train.json 파일을 각각 1개씩 읽어 example 및 feature로 변환한 cached 파일로 변환하고 
 각 cached 파일을 하나씩 읽어서 학습하는 코드를 작성하여 학습하고 있습니다.
+
+
