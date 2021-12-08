@@ -8,6 +8,4 @@ wiki 에서 본문 데이터를 가져왔고 wiki의 본문에 질문, 그리고
 ### Korquad 데이터 구조(ver 1)
 ![코쿼드데이터구조](https://user-images.githubusercontent.com/45644085/144961669-625e5302-4609-40ef-8e1e-071b90eaca10.JPG)
 Korquad 학습 데이터 구조는 다음과 같습니다.
-
-
-
+data 라는 list 안에 여러개의 title을 가진 paragraphs가 존재하고 해당 paragraphs는 context라는 내용(본문)을 가지고 있으며 qas를 여러개 가지고 잇습니다. qas는 question, answer를 가지고 있습니다.  
