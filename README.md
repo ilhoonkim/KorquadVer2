@@ -27,7 +27,7 @@ Korquad도 SQuAD와 마찬가지로 답변 불가능한 질문에 대한 학습�
 해당 문제에 추가로 변경된 점이 있다면 기존의 512 토큰 길이(max_paragraph_length) 이내로 제한되었던 context를 위키 백과의 한 페이지 html을 사용하였다는 것입니다.
 해당 변화로 인해 학습 이전에 긴 10000 token 이상의 html 원문을 학습가능한 형태인 512 토큰 이내의 paragraph로 분할해주는 작업이 필요하게 되었습니다. 
 html 원문을 전처리를 통해 필요없는 tag를 제거하거나 다른 토큰으로 변환하는 작업이 필요하며, 해당 작업을 통해 테이블 형태의 데이터도 토큰으로 변환하여 들어오게 되어 
-테이블 내에서도 기계독해가 가능하도록 하였습니다. 해당 전처리 코드는 github 등에 공개된 바가 거의 없고 JoungheeKim님이 korean-question-answer-system github에 korquad 처리를 위한 여러 전처리 코드(wiki_convert, preprocess 등) 을 올리셧으나 현재는 보이지 않는 상황입니다. 처음에 해당 코드를 활용하여 사용하였습니다. 해당 코드는 table을 |,/을 사용하여 의미론적으로 묶는 코드는 아니라 해당 부분은 변환이 필요하였습니다. 해당 부분은 추후에 추가로 설명드리겠습니다.
+테이블 내에서도 기계독해가 가능하도록 하였습니다. 해당 전처리 코드는 github 등에 공개된 바가 거의 없고 JoungheeKim님이 korean-question-answer-system github에 korquad 처리를 위한 여러 전처리 코드(wiki_convert, preprocess 등) 을 올리셨습니다. 처음에 해당 코드를 활용하여 사용하였습니다. 해당 코드는 table을 |,/을 사용하여 의미론적으로 묶는 코드는 아니라 해당 부분은 변환이 필요하였습니다. 해당 부분은 추후에 추가로 설명드리겠습니다.
 
 긴 html context를 여러개의 512 토큰 이내의 paragraphs로 나누고 각 parpagraphs에 기존의 html context에 붙어있던 qas의 질문을 함께 넣고 해당 본문에 답변이 있으면 is_impossible은 false가 되고 답변의 위치를 주게 됩니다. 반대로 나누어진 paragraphs에 답변이 없으면 is_impossible은 true가 되고 답변은 없게 됩니다.
 이러한 korquad 2 버전의 변화로 인해, 짧은 기사 단위가 아니라 긴 문서도 html로 변환하여 기계독해를 시도해볼 수 있게 되었다는 점에서 의미가 있다고 봅니다.
